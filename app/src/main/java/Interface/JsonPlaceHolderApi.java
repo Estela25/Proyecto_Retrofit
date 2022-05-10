@@ -7,6 +7,7 @@ import java.util.List;
 import Model.Album;
 import Model.Comments1;
 import Model.Post;
+import Model.Todo;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -19,5 +20,8 @@ Call<List<Post>> getPosts();
 
     @GET("albums")
     Call<List<Album>> getAlbums();
+
+    @GET("todos")
+    Call<List<Todo>> getTodos();
 
 }

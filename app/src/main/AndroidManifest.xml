@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificaciones_Push">
         <activity
+            android:name=".MenuP"
+            android:exported="false" />
+        <activity
+            android:name=".todo1"
+            android:exported="false" />
+        <activity
             android:name=".albums1"
             android:exported="false" />
         <activity
