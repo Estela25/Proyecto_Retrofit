@@ -4,6 +4,7 @@ import org.w3c.dom.Comment;
 
 import java.util.List;
 
+import Model.Album;
 import Model.Comments1;
 import Model.Post;
 import retrofit2.Call;
@@ -15,5 +16,8 @@ Call<List<Post>> getPosts();
 
     @GET("comments")
     Call<List<Comments1>> getComments();
+
+    @GET("albums")
+    Call<List<Album>> getAlbums();
 
 }

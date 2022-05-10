@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificaciones_Push">
         <activity
+            android:name=".albums1"
+            android:exported="false" />
+        <activity
             android:name=".Comments"
             android:exported="false" />
         <activity

@@ -26,7 +26,7 @@ public class Comments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comments);
 
-        mJsonTxtView2 = findViewById(R.id.jsonText);
+        mJsonTxtView2 = findViewById(R.id.jsonText2);
         getComments();
     }
 
