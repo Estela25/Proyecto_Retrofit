@@ -6,9 +6,9 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.notificaciones_push"
+        applicationId "com.notificaciones_push"
         minSdk 16
-        targetSdk 32
+        targetSdk 28
         versionCode 1
         versionName "1.0"
 

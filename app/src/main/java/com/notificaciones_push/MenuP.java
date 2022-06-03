@@ -1,4 +1,4 @@
-package com.example.notificaciones_push;
+package com.notificaciones_push;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import Model.Post;
 
 public class MenuP extends AppCompatActivity {
 

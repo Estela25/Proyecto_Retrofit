@@ -1,4 +1,4 @@
-package com.example.notificaciones_push;
+package com.notificaciones_push;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,27 +8,27 @@ import android.widget.TextView;
 import java.util.List;
 
 import Interface.JsonPlaceHolderApi;
-import Model.Post;
+import Model.Comments1;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class Comments extends AppCompatActivity {
 
-    private TextView mJsonTxtView;
+    private TextView mJsonTxtView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_comments);
 
-        mJsonTxtView = findViewById(R.id.jsonText);
-        getPosts();
+        mJsonTxtView2 = findViewById(R.id.jsonText2);
+        getComments();
     }
 
-    private void getPosts(){
+    private void getComments(){
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
@@ -37,34 +37,37 @@ public class MainActivity extends AppCompatActivity {
 
         JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        Call<List<Post>> Call = jsonPlaceHolderApi.getPosts();
+        Call<List<Comments1>> Call = jsonPlaceHolderApi.getComments();
 
-        Call.enqueue(new Callback<List<Post>>() {
+        Call.enqueue(new Callback<List<Comments1>>() {
             @Override
-            public void onResponse(retrofit2.Call<List<Post>> call, Response<List<Post>> response) {
-
+            public void onResponse(retrofit2.Call<List<Comments1>> call, Response<List<Comments1>> response) {
                 if (!response.isSuccessful()){
-                    mJsonTxtView.setText("Codigo: "+ response.code());
+                    mJsonTxtView2.setText("Codigo: "+ response.code());
                     return;
                 }
 
-                List<Post> postsList = response.body();
+                List<Comments1> postsList = response.body();
 
-                for(Post post: postsList){
+                for(Comments1 post: postsList){
                     String content = "";
-                    content += "userId:"+ post.getUserId() + "\n";
+                    content += "postif:"+ post.getPostId() + "\n";
                     content += "id:"+ post.getId() + "\n";
-                    content += "title:"+ post.getTitle() + "\n";
+                    content += "name:"+ post.getName() + "\n";
+                    content += "email:"+ post.getEmail() + "\n";
                     content += "body:"+ post.getBody() + "\n\n";
-                    mJsonTxtView.append(content);
+                    mJsonTxtView2.append(content);
                 }
             }
 
             @Override
-            public void onFailure(retrofit2.Call<List<Post>> call, Throwable t) {
-
-                mJsonTxtView.setText(t.getMessage());
+            public void onFailure(retrofit2.Call<List<Comments1>> call, Throwable t) {
+                mJsonTxtView2.setText(t.getMessage());
             }
+
+
+
         });
     }
+
 }

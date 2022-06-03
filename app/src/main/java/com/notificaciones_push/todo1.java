@@ -1,4 +1,4 @@
-package com.example.notificaciones_push;
+package com.notificaciones_push;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import Interface.JsonPlaceHolderApi;
-import Model.Album;
 import Model.Todo;
 import retrofit2.Call;
 import retrofit2.Callback;
